@@ -320,7 +320,7 @@ class Field(object):
         if callable(self.default):
             if hasattr(self.default, 'set_context'):
                 self.default.set_context(self)
-            return self.default()
+            return self.default(self)
         return self.default
 
     def validate_empty_values(self, data):
